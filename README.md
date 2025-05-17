@@ -15,13 +15,13 @@ Backend for ascii social media platform site
 ### 1. Clone the repository
 
 ```powershell
-git clone https://github.com/<your-username>/ascii-smth.git
+git clone https://github.com/ThaKhinso/ascii-smth.git
 cd ascii-smth
 ```
 
 
 ### 2. Open the project in Visual Studio Code
-This project use the msvc as the compiler so you need to first open the developer powershell for VS2022 and from there cd to the project you cloned and type
+**This project use the msvc as the compiler so you need to first open the developer powershell for VS2022 and from there cd to the project you cloned and type**
 ```powershell
 code .
 ```
@@ -31,7 +31,7 @@ In the setupenv.ps1 script, change the VCPKG_ROOT to your own folder of vcpkg yo
 Run the provided PowerShell script to set the `VCPKG_ROOT` environment variable:
 
 ```powershell
-. .\setupenv.ps1
+.\setupenv.ps1
 ```
 
 ### 4. Configure cmake
