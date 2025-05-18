@@ -9,7 +9,9 @@ add_definitions(-D_WIN32_WINNT=0x0A00)
 
 find_package(fmt CONFIG REQUIRED)
 find_package(Crow CONFIG REQUIRED)
+find_package(mongocxx CONFIG REQUIRED)
+find_package(bsoncxx CONFIG REQUIRED)
 
 add_executable(HelloWorld src/main.cpp)
 
-target_link_libraries(HelloWorld PRIVATE fmt::fmt Crow::Crow)
+target_link_libraries(HelloWorld PRIVATE fmt::fmt Crow::Crow mongo::mongocxx_shared mongo::bsoncxx_shared)
