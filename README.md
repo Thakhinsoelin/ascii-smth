@@ -63,3 +63,4 @@ Visit [http://localhost:18080/](http://localhost:18080/) in your browser.
 - The project targets Windows 10 or later (`_WIN32_WINNT=0x0A00`).
 - For more details, see the [official Microsoft guide for vcpkg with VS Code](https://learn.microsoft.com/en-us/cpp/build/vcpkg).
 - Note that commands should also work in other operating systems. You might need to setup environment vairable in your operating systems' ways tho.
+- Set the environment variables for MONGO_USER and MONGO_PASS or else the program will crash.
