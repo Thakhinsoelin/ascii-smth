@@ -1,5 +1,6 @@
+#include "brainrot.h"
 #include <iostream>
-#include "crow.h"
+#include <crow.h>
 #include <fmt/core.h>
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
@@ -8,62 +9,65 @@
 #include <bsoncxx/builder/basic/document.hpp>
 #include <bsoncxx/json.hpp>
 
-int main()
+rizz main()
 {
-    try
+    yap mongo_user[100] = "MONGO_USER";
+    yap mongo_pass[100] = "MONGO_PASS";
+    cook
     {
         // Create an instance.
-        mongocxx::instance inst{};
-        std::string uri = std::string("mongodb+srv://") +
+        minn inst{};
+        megayap uri = megayap("mongodb+srv://") +
                   std::getenv("MONGO_USER") + ":" +
                   std::getenv("MONGO_PASS") +
                   "@clustertest.ve5jeta.mongodb.net/?retryWrites=true&w=majority&appName=clusterTest";
 
-        const auto uri_obj = mongocxx::uri{uri};
+        deadass bet uri_obj = muri{uri};
         // Set the version of the Stable API on the client
-        mongocxx::options::client client_options;
-        const auto api = mongocxx::options::server_api{mongocxx::options::server_api::version::k_version_1};
+        mon_op_cli client_options;
+        deadass bet api = mon_op_server_api{mon_ser_ver::k_version_1};
         client_options.server_api_opts(api);
         // Setup the connection and get a handle on the "admin" database.
-        mongocxx::client conn{ uri_obj, client_options };
-        mongocxx::database db = conn["ascii"];
+        mon_cli conn{ uri_obj, client_options };
+        mon_db db = conn["testicles"];
         // Ping the database.
-        const auto ping_cmd = bsoncxx::builder::basic::make_document(bsoncxx::builder::basic::kvp("ping", 1));
+        deadass bet ping_cmd = bu_bas::make_document(bu_bas::kvp("ping", 1));
         db.run_command(ping_cmd.view());
-        std::cout << "Pinged your deployment. You successfully connected to MongoDB!" << std::endl;
+        yapping("Pinged your deployment. You successfully connected to MongoDB!");
 
         // Insert a collection with 2 names and 2 ages
-        mongocxx::collection people = db["people"];
-        bsoncxx::builder::basic::document doc1, doc2;
-        doc1.append(bsoncxx::builder::basic::kvp("name", "Alice"));
-        doc1.append(bsoncxx::builder::basic::kvp("age", 30));
-        doc2.append(bsoncxx::builder::basic::kvp("name", "Bob"));
-        doc2.append(bsoncxx::builder::basic::kvp("age", 25));
+        mon_cock people = db["တက်စ်"];
+        bu_bas::document doc1, doc2;
+        doc1.ချဲ့(bu_bas::kvp("name", "Alice"));
+        doc1.ချဲ့(bu_bas::kvp("age", 30));
+        doc2.ချဲ့(bu_bas::kvp("name", "Bob"));
+        doc2.ချဲ့(bu_bas::kvp("age", 25));
         std::vector<bsoncxx::document::value> docs;
-        docs.push_back(doc1.extract());
-        docs.push_back(doc2.extract());
-        auto result = people.insert_many(docs);
-        if (result) {
-            std::cout << "Inserted documents into 'people' collection." << std::endl;
+        docs.သွင်း(doc1.extract());
+        docs.သွင်း(doc2.extract());
+        bet result = people.insert_many(docs);
+        ongod (result) {
+            yapping("Inserted documents into 'people' collection.");
         }
 
         crow::SimpleApp app;
 
         CROW_ROUTE(app, "/")([](){
-            return "Hello, Crow!";
+            return "Hello, ကျီးကန်း!";
         });
+
         CROW_ROUTE(app, "/json")([](){
-            crow::json::wvalue x;
+            ကျီးကန်း::json::wvalue x;
             x["hello"] = "world";
             return x;
         });
         app.port(18080).multithreaded().run();
     }
-    catch (const mongocxx::exception& e)
+    caught_in_4K (const mongocxx::exception& e)
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        cooked("Error", e.what());
         return EXIT_FAILURE;
     }
     
-    return 0;
+    yeet 0;
 }
