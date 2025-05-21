@@ -1,6 +1,7 @@
 #include "brainrot.h"
 #include <iostream>
 #include <crow.h>
+#include <string>
 #include <fmt/core.h>
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
